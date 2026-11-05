@@ -1,0 +1,121 @@
+:root {
+  --fundo: #f4f6f5;
+  --superficie: #ffffff;
+  --texto: #1e272b;
+  --texto-suave: #5a666c;
+  --borda: #d6dcda;
+  --destaque: #1f6f68;
+  --destaque-escuro: #175651;
+  --perigo: #b3261e;
+  --erro-fundo: #fbeceb;
+  --raio: 6px;
+  font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  color: var(--texto);
+  background: var(--fundo);
+  line-height: 1.5;
+}
+
+* { box-sizing: border-box; }
+body { margin: 0; }
+h1 { font-size: 1.5rem; margin: 0 0 0.5rem; }
+a { color: var(--destaque); }
+
+:focus-visible {
+  outline: 2px solid var(--destaque);
+  outline-offset: 2px;
+}
+
+/* ---------- navbar ---------- */
+.navbar { background: var(--superficie); border-bottom: 1px solid var(--borda); }
+.navbar-interno {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0.75rem 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+.marca { font-weight: 700; font-size: 1.1rem; color: var(--texto); text-decoration: none; }
+.navbar-acoes { display: flex; align-items: center; gap: 1rem; flex-wrap: wrap; }
+.usuario { color: var(--texto-suave); font-size: 0.9rem; }
+
+/* ---------- layout ---------- */
+.conteudo { max-width: 1000px; margin: 0 auto; padding: 1.5rem 1rem 3rem; }
+.cabecalho-pagina { display: flex; align-items: center; justify-content: space-between; gap: 1rem; margin-bottom: 1rem; }
+.cabecalho-pagina h1 { margin: 0; }
+
+.cartao {
+  background: var(--superficie);
+  border: 1px solid var(--borda);
+  border-radius: var(--raio);
+  padding: 1.5rem;
+}
+.cartao-estreito { max-width: 420px; margin: 2rem auto; }
+.vazio { text-align: center; color: var(--texto-suave); }
+
+.texto-suave { color: var(--texto-suave); }
+.pequeno { font-size: 0.85rem; }
+
+/* ---------- formulário ---------- */
+.formulario { display: flex; flex-direction: column; gap: 1rem; margin-top: 1rem; }
+label { display: flex; flex-direction: column; gap: 0.25rem; font-weight: 600; font-size: 0.9rem; flex: 1; }
+label small { font-weight: 400; color: var(--texto-suave); }
+
+input, select {
+  font: inherit;
+  font-weight: 400;
+  padding: 0.55rem 0.7rem;
+  border: 1px solid var(--borda);
+  border-radius: var(--raio);
+  background: #fff;
+  color: var(--texto);
+  width: 100%;
+}
+
+fieldset { border: 1px solid var(--borda); border-radius: var(--raio); padding: 1rem; display: flex; flex-direction: column; gap: 0.75rem; }
+legend { font-weight: 600; font-size: 0.9rem; padding: 0 0.4rem; }
+
+.linha { display: flex; gap: 1rem; }
+.linha-rendimento { align-items: flex-end; }
+.botoes { display: flex; gap: 0.75rem; }
+.rodape-form { margin-top: 1.25rem; font-size: 0.9rem; }
+
+/* ---------- botões ---------- */
+.btn {
+  font: inherit;
+  font-weight: 600;
+  display: inline-block;
+  padding: 0.55rem 1rem;
+  border: 1px solid var(--destaque);
+  border-radius: var(--raio);
+  background: var(--destaque);
+  color: #fff;
+  cursor: pointer;
+  text-decoration: none;
+  text-align: center;
+}
+.btn:hover:not(:disabled) { background: var(--destaque-escuro); }
+.btn:disabled { opacity: 0.55; cursor: not-allowed; }
+.btn-secundario { background: #fff; color: var(--destaque); }
+.btn-secundario:hover:not(:disabled) { background: #eaf3f2; }
+.btn-perigo { background: #fff; color: var(--perigo); border-color: var(--perigo); }
+.btn-perigo:hover:not(:disabled) { background: var(--erro-fundo); }
+
+/* ---------- alertas ---------- */
+.alerta { margin: 0; padding: 0.6rem 0.8rem; border-radius: var(--raio); font-size: 0.9rem; }
+.alerta-erro { background: var(--erro-fundo); color: var(--perigo); border: 1px solid #ecc3c0; }
+
+/* ---------- tabela ---------- */
+.tabela-wrapper { overflow-x: auto; background: var(--superficie); border: 1px solid var(--borda); border-radius: var(--raio); }
+table { width: 100%; border-collapse: collapse; }
+th, td { text-align: left; padding: 0.75rem 1rem; border-bottom: 1px solid var(--borda); vertical-align: top; }
+th { font-size: 0.85rem; color: var(--texto-suave); background: #f9faf9; }
+tbody tr:last-child td { border-bottom: none; }
+.acoes { display: flex; gap: 0.5rem; flex-wrap: wrap; }
+
+@media (max-width: 600px) {
+  .linha { flex-direction: column; align-items: stretch; }
+  .cabecalho-pagina { flex-direction: column; align-items: flex-start; }
+}
