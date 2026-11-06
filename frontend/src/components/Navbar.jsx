@@ -17,7 +17,7 @@ export default function Navbar() {
 
         {autenticado && (
           <nav className="navbar-acoes">
-            <Link to="/clientes">Clientes</Link>
+            <Link to="/clientes">Clientes</Link>\n            <Link to="/carros">Automóveis</Link>\n            <Link to="/pedidos">Pedidos</Link>
             <span className="usuario">
               {usuario.login} · {ROTULOS_PERFIL[usuario.perfil]}
             </span>
